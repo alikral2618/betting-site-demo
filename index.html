@@ -3,42 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Bahis Sitesi</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Canlı Maçlar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .match {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .match h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .match p {
+            margin: 5px 0;
+        }
+        .loading {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Demo Bahis Sitesi</h1>
-            <p>Hoşgeldiniz, <span id="userName">John Doe</span></p>
-            <p>Mevcut Bakiye: <span id="userBalance">1000</span> TL</p>
-        </header>
+<div class="container">
+    <h1>Canlı Maçlar</h1>
+    <div id="live-matches" class="loading">Canlı maçlar yükleniyor...</div>
+</div>
 
-        <div id="bettingSection">
-            <h2>Bahis Yap</h2>
-            <div class="betting-options">
-                <div class="bet-option">
-                    <h3>Slot Makinesi Bahisi</h3>
-                    <p>Bakiye: 100 TL, Slot makinesinde bahis yap</p>
-                    <button onclick="placeSlotBet()">Bahis Yap</button>
-                </div>
-                <div class="bet-option">
-                    <h3>Rastgele Bahis</h3>
-                    <p>Bakiye: 50 TL, Rastgele bahis yap</p>
-                    <button onclick="placeRandomBet()">Bahis Yap</button>
-                </div>
-            </div>
-        </div>
+<script>
+    // Canlı maçları almak için API URL'sini belirtin (bu örnekte placeholder URL)
+    const apiUrl = 'https://api.sportsdata.io/v4/soccer/scores/json/GamesBySeason/{season}';
+    const apiKey = 'API_KEY';  // API anahtarınızı buraya girin
 
-        <div id="betResult" style="display: none;">
-            <h3>Bahis Sonucu:</h3>
-            <p id="betOutcome"></p>
-            <button onclick="resetGame()">Tekrar Oyna</button>
-        </div>
-    </div>
+    // API'den canlı maçları al
+    fetch(apiUrl, {
+        headers: {
+            'Ocp-Apim-Subscription-Key': apiKey
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const matchesContainer = document.getElementById('live-matches');
+        matchesContainer.innerHTML = ''; // Yükleniyor mesajını kaldır
 
-    <script src="script.js"></script>
+        if (data.length === 0) {
+            matchesContainer.innerHTML = '<p>Şu anda canlı maç bulunmamaktadır.</p>';
+        } else {
+            data.forEach(match => {
+                const matchElement = document.createElement('div');
+                matchElement.classList.add('match');
+
+                matchElement.innerHTML = `
+                    <h2>${match.HomeTeam} vs ${match.AwayTeam}</h2>
+                    <p>Durum: ${match.Status}</p>
+                    <p>Başlama Saati: ${new Date(match.DateTime).toLocaleString()}</p>
+                `;
+                matchesContainer.appendChild(matchElement);
+            });
+        }
+    })
+    .catch(error => {
+        document.getElementById('live-matches').innerHTML = 'Veri alınırken bir hata oluştu.';
+        console.error('Error fetching data:', error);
+    });
+</script>
 
 </body>
 </html>
