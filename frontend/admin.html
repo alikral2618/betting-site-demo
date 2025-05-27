@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h2>Kullanıcı Listesi</h2>
+  <ul id="userList"></ul>
+
+  <script>
+    fetch("http://localhost:3000/admin/users", {
+      headers: { "Authorization": "Bearer TOKENIN" }
+    })
+      .then(res => res.json())
+      .then(data => {
+        const ul = document.getElementById("userList");
+        data.forEach(user => {
+          const li = document.createElement("li");
+          li.textContent = `ID: ${user.id} | Email: ${user.email}`;
+          ul.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
