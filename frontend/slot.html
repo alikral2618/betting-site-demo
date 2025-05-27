@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Slot Makinesi</title>
+  <style>
+    .reels { font-size: 50px; text-align: center; }
+    .result { font-size: 24px; color: green; }
+  </style>
+</head>
+<body>
+  <div class="reels" id="reels">🍒 🍋 🍊</div>
+  <button onclick="playSlot()">Oyna</button>
+  <div class="result" id="result"></div>
+
+  <script>
+    const symbols = ["🍒", "🍋", "🍊", "🍇", "💎"];
+    function playSlot() {
+      const r1 = symbols[Math.floor(Math.random() * symbols.length)];
+      const r2 = symbols[Math.floor(Math.random() * symbols.length)];
+      const r3 = symbols[Math.floor(Math.random() * symbols.length)];
+      document.getElementById("reels").textContent = `${r1} ${r2} ${r3}`;
+      document.getElementById("result").textContent = r1 === r2 && r2 === r3
+        ? "🎉 Kazandın!"
+        : "😢 Kaybettin.";
+    }
+  </script>
+</body>
+</html>
