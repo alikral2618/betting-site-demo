@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Animasyonlu Oyun Örneği - Phaser.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+  <style>
+    body { margin: 0; }
+    #game-container { width: 800px; height: 600px; margin: auto; }
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <script>
+    const config = {
+      type: Phaser.AUTO,
+      width: 800,
+      height: 600,
+      backgroundColor: '#242424',
+      parent: 'game-container',
+      scene: {
+        preload,
+        create,
+        update
+      }
+    };
+
+    let score = 0;
+    let scoreText;
+    let ball;
+
+    const game = new Phaser.Game(config);
+
+    function preload() {
+      this.load.image('ball', 'https://labs.phaser.io/assets/sprites/shinyball.png');
+    }
+
+    function create() {
+      ball = this.physics.add.image(400, 300, 'ball');
+      ball.setCollideWorldBounds(true);
+      ball.setBounce(1);
+      ball.setVelocity(200, 150);
+
+      ball.setInteractive();
+      ball.on('pointerdown', () => {
+        score += 10;
+        scoreText.setText('Puan: ' + score);
+        // Animasyon efekti (örneğin büyüt ve küçült)
+        this.tweens.add({
+          targets: ball,
+          scale: 1.5,
+          duration: 100,
+          yoyo: true
+        });
+      });
+
+      scoreText = this.add.text(10, 10, 'Puan: 0', { fontSize: '32px', fill: '#fff' });
+    }
+
+    function update() {
+      // Her frame'de yapılacak işler (şimdilik yok)
+    }
+  </script>
+</body>
+</html>
