@@ -3,33 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Benim Cüzdanım</title>
+  <title>Online Cüzdan</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<div class="wallet">
-  <h2>Benim Cüzdanım</h2>
-  <div class="balance" id="balance">₺ ---</div>
-
-  <div class="bank-select">
-    <label for="bank">Banka Seç:</label>
-    <select id="bank">
-      <option disabled selected>-- Banka seçin --</option>
-      <option>Ziraat Bankası</option>
-      <option>İş Bankası</option>
-      <option>Yapı Kredi</option>
-      <option>Garanti BBVA</option>
-      <option>Akbank</option>
-    </select>
+<div class="container">
+  <div id="auth-screen">
+    <h2>Giriş / Kayıt</h2>
+    <input type="text" id="username" placeholder="Kullanıcı adı">
+    <button onclick="login()">Giriş Yap</button>
   </div>
 
-  <div class="amount-input">
-    <label for="amount">Yatırılacak Tutar (₺):</label>
-    <input type="number" id="amount" placeholder="Örn: 100">
-  </div>
+  <div id="wallet-screen" class="hidden">
+    <div class="header">
+      <h2>Hoş geldin, <span id="user-name"></span>!</h2>
+      <button onclick="logout()">Çıkış</button>
+      <button onclick="toggleTheme()">🌗 Tema</button>
+    </div>
 
-  <button class="submit-btn" onclick="depositMoney()">Para Yatır</button>
+    <div class="balance">Bakiye: ₺<span id="balance">0</span></div>
+
+    <div class="actions">
+      <select id="bank">
+        <option disabled selected>-- Banka Seçin --</option>
+        <option>Ziraat Bankası</option>
+        <option>İş Bankası</option>
+        <option>Yapı Kredi</option>
+        <option>Garanti</option>
+        <option>Akbank</option>
+      </select>
+      <input type="number" id="amount" placeholder="Tutar (₺)">
+      <button onclick="deposit()">Para Yatır</button>
+      <button onclick="withdraw()">Para Çek</button>
+    </div>
+
+    <div class="history">
+      <h3>İşlem Geçmişi</h3>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
 </div>
 
 <script src="js/main.js"></script>
