@@ -1,26 +1,25 @@
-# Betting Site Demo 🎲
+# Betting Site Demo
 
-Bu proje, basit bir bahis sitesi arayüzünü simüle eden HTML/CSS/JavaScript tabanlı bir web demo uygulamasıdır.
+Bu proje, basit bir **betting sitesi demo** uygulamasıdır.  
+Kullanıcıların para yükleyebileceği ve kayıt olabileceği modern, sade bir arayüz sunar.
 
-## 🧩 Özellikler
+---
 
-- Sayfa açıldığında **para yükleme** ekranı görünür.
-- Kullanıcı geçerli bir tutar girip "**Para Yükle**" butonuna tıkladığında, **kayıt formuna** yönlendirilir.
-- Basit kullanıcı arayüzü ile oynanabilirlik sunar.
-- Temiz HTML, ayrılmış CSS ve JavaScript yapısı.
+## Özellikler
 
-## 🖥️ Teknolojiler
+- Ana sayfa açıldığında kullanıcıya **Para Yükleme** seçeneği sunulur.
+- "Para Yüklemeye Başla" butonuna basıldığında **Kayıt Ol** formu görünür.
+- Kayıt formunda sadece **Kullanıcı Adı** ve **Şifre** alanları vardır.
+- Şifre unutma durumunda, kullanıcılar destek için **gmail** adresi üzerinden iletişim kurabilir.
+- Modern ve responsive tasarım.
+- Basit modal destek sistemi.
 
-- HTML
-- CSS (`style.css`)
-- JavaScript (`script.js`)
+---
 
-## 🚀 Kurulum ve Kullanım
+## Kullanım
 
-Projeyi yerel bilgisayarınızda çalıştırmak için:
+1. Repoyu klonlayın:
 
-1. Reposu klonlayın:
-
-```bash
-git clone https://github.com/alikral2618/betting-site-demo.git
-cd betting-site-demo
+   ```bash
+   git clone https://github.com/alikral2618/betting-site-demo.git
+   cd betting-site-demo
