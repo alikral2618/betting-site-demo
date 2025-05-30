@@ -1,18 +1,26 @@
-# Benim Online Cüzdanım 💳
+# Betting Site Demo 🎲
 
-Bu proje, gerçek para transferi yapmayan; sadece kullanıcı arayüzü sunan bir online cüzdan prototipidir. GitHub üzerinde frontend geliştirme örneği olarak kullanılabilir.
+Bu proje, basit bir bahis sitesi arayüzünü simüle eden HTML/CSS/JavaScript tabanlı bir web demo uygulamasıdır.
 
-## Özellikler
-- Banka seçme
-- Para yatırma alanı (gerçek işlem yapılmaz)
-- Responsive arayüz
+## 🧩 Özellikler
 
-## Dosya Yapısı
+- Sayfa açıldığında **para yükleme** ekranı görünür.
+- Kullanıcı geçerli bir tutar girip "**Para Yükle**" butonuna tıkladığında, **kayıt formuna** yönlendirilir.
+- Basit kullanıcı arayüzü ile oynanabilirlik sunar.
+- Temiz HTML, ayrılmış CSS ve JavaScript yapısı.
 
-- `index.html`: Ana sayfa
-- `css/style.css`: Arayüz tasarımı
-- `js/main.js`: Temel JavaScript işlemleri
-- `README.md`: Proje açıklaması
+## 🖥️ Teknolojiler
 
-## Not
-Bu sistem gerçek para işlemi yapmaz. Arayüz geliştirme amaçlıdır.
+- HTML
+- CSS (`style.css`)
+- JavaScript (`script.js`)
+
+## 🚀 Kurulum ve Kullanım
+
+Projeyi yerel bilgisayarınızda çalıştırmak için:
+
+1. Reposu klonlayın:
+
+```bash
+git clone https://github.com/alikral2618/betting-site-demo.git
+cd betting-site-demo
