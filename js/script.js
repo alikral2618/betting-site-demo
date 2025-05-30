@@ -1,42 +1,36 @@
-function goToRegister() {
-  const amount = document.getElementById("amount").value;
-  if (amount && amount > 0) {
-    document.getElementById("deposit-screen").classList.add("hidden");
-    document.getElementById("register-screen").classList.remove("hidden");
-  } else {
-    alert("Lütfen geçerli bir tutar girin.");
-  }
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const supportLink = document.getElementById('support-link');
+  const modal = document.getElementById('support-modal');
+  const closeModal = document.getElementById('close-modal');
+  const registerForm = document.getElementById('register-form');
 
-const supportLink = document.getElementById("support-link");
-const supportModal = document.getElementById("support-modal");
-const closeModal = document.getElementById("close-modal");
+  supportLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.remove('hidden');
+  });
 
-supportLink.addEventListener("click", function(e) {
-  e.preventDefault();
-  supportModal.classList.remove("hidden");
-});
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
 
-closeModal.addEventListener("click", function() {
-  supportModal.classList.add("hidden");
-});
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
 
-window.addEventListener("click", function(event) {
-  if (event.target === supportModal) {
-    supportModal.classList.add("hidden");
-  }
-});
+  registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
 
-const registerForm = document.getElementById("register-form");
-registerForm.addEventListener("submit", function(e) {
-  e.preventDefault();
+    if (username === '' || password === '') {
+      alert('Lütfen tüm alanları doldurun.');
+      return;
+    }
 
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value;
-
-  if(username && password) {
+    // Buraya kayıt işlemi için API çağrısı veya başka işlem ekleyebilirsin
     alert(`Kayıt başarılı!\nKullanıcı Adı: ${username}`);
-  } else {
-    alert("Lütfen tüm alanları doldurun.");
-  }
+    registerForm.reset();
+  });
 });
