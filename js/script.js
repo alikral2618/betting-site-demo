@@ -1,27 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const depositSection = document.getElementById('deposit-section');
-  const registerSection = document.getElementById('register-section');
-  const goToRegisterBtn = document.getElementById('go-to-register');
-  const registerForm = document.getElementById('register-form');
+const depositSection = document.getElementById('deposit-section');
+const registerSection = document.getElementById('register-section');
+const btnDeposit = document.getElementById('btn-deposit');
+const registerForm = document.getElementById('register-form');
 
-  // "Para Yüklemeye Başla" butonuna basınca kayıt formunu göster
-  goToRegisterBtn.addEventListener('click', () => {
-    depositSection.classList.add('hidden');
-    registerSection.classList.remove('hidden');
-  });
+btnDeposit.addEventListener('click', () => {
+  depositSection.classList.add('hidden');
+  registerSection.classList.remove('hidden');
+});
 
-  // Form gönderildiğinde basit doğrulama ve alert
-  registerForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
+registerForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
 
-    if (!username || !password) {
-      alert('Lütfen kullanıcı adı ve şifrenizi girin.');
-      return;
-    }
+  if (!username || !password) {
+    alert('Lütfen kullanıcı adı ve şifrenizi girin.');
+    return;
+  }
 
-    alert(`Kayıt başarılı!\nKullanıcı Adı: ${username}`);
-    registerForm.reset();
-  });
+  // Burada kayıt işlemi yapılabilir (backend veya localStorage)
+
+  alert(`Kayıt başarılı! Kullanıcı adı: ${username}`);
+
+  // Formu sıfırla
+  registerForm.reset();
+
+  // Kayıt ekranını gizle, para yükleme ekranını göster
+  registerSection.classList.add('hidden');
+  depositSection.classList.remove('hidden');
 });
