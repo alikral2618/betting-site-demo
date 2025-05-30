@@ -2,22 +2,31 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Kayıt Ol - Betting Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Betting Site Demo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="main-container">
+    <!-- Para Yükleme Bölümü -->
+    <section id="deposit-section" class="deposit-section">
+      <h2>Para Yükleme</h2>
+      <button id="go-to-register">Para Yüklemeye Başla</button>
+    </section>
 
-  <div class="register-container">
-    <h2>Kayıt Ol</h2>
-    <form id="register-form">
-      <input type="text" id="username" placeholder="Kullanıcı Adı" required />
-      <input type="password" id="password" placeholder="Şifre" required />
-      <button type="submit">Kayıt Ol</button>
-    </form>
-    <p class="forgot-password">
-      Şifrenizi mi unuttunuz? <a href="#" id="support-link">Destek Alın</a>
-    </p>
-  </div>
+    <!-- Kayıt Formu -->
+    <section id="register-section" class="register-section hidden">
+      <h2>Kayıt Ol</h2>
+      <form id="register-form">
+        <input type="text" id="username" placeholder="Kullanıcı Adı" required />
+        <input type="password" id="password" placeholder="Şifre" required />
+        <button type="submit">Kayıt Ol</button>
+      </form>
+      <p class="forgot-password">
+        Şifrenizi mi unuttunuz? <a href="#" id="support-link">Destek Alın</a>
+      </p>
+    </section>
+  </main>
 
   <!-- Destek Modal -->
   <div id="support-modal" class="modal hidden">
