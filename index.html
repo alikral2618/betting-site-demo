@@ -2,55 +2,28 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Online Cüzdan</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Betting Site Demo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-  <div id="auth-screen">
-    <h2>Giriş / Kayıt</h2>
-    <input type="text" id="username" placeholder="Kullanıcı adı">
-    <button onclick="login()">Giriş Yap</button>
+
+  <!-- Para Yükleme Ekranı -->
+  <div id="deposit-screen" class="box">
+    <h2>Para Yükle</h2>
+    <label for="amount">Yüklenecek Tutar:</label>
+    <input type="number" id="amount" placeholder="₺" />
+    <button onclick="goToRegister()">Para Yükle</button>
   </div>
 
-  <div id="wallet-screen" class="hidden">
-    <div class="header">
-      <h2>Hoş geldin, <span id="user-name"></span>!</h2>
-      <button onclick="logout()">Çıkış</button>
-      <button onclick="toggleTheme()">🌗 Tema</button>
-    </div>
-
-    <div class="balance">Bakiye: ₺<span id="balance">0</span></div>
-    
-<div id="auth-screen">
-  <h2>Giriş / Kayıt</h2>
-  <input type="text" id="username" placeholder="Kullanıcı adı">
-  <input type="password" id="password" placeholder="Şifre">
-  <button onclick="login()">Giriş Yap / Kayıt Ol</button>
-</div>
-
-    <div class="actions">
-      <select id="bank">
-        <option disabled selected>-- Banka Seçin --</option>
-        <option>Ziraat Bankası</option>
-        <option>İş Bankası</option>
-        <option>Yapı Kredi</option>
-        <option>Garanti</option>
-        <option>Akbank</option>
-      </select>
-      <input type="number" id="amount" placeholder="Tutar (₺)">
-      <button onclick="deposit()">Para Yatır</button>
-      <button onclick="withdraw()">Para Çek</button>
-    </div>
-
-    <div class="history">
-      <h3>İşlem Geçmişi</h3>
-      <ul id="history-list"></ul>
-    </div>
+  <!-- Kayıt Formu -->
+  <div id="register-screen" class="box hidden">
+    <h2>Kayıt Ol</h2>
+    <input type="text" placeholder="Kullanıcı Adı"><br><br>
+    <input type="email" placeholder="E-posta"><br><br>
+    <input type="password" placeholder="Şifre"><br><br>
+    <button>Kayıt Ol</button>
   </div>
-</div>
 
-<script src="js/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
