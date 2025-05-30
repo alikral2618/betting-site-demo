@@ -23,6 +23,32 @@
     <input type="password" placeholder="Şifre"><br><br>
     <button>Kayıt Ol</button>
   </div>
+  <!-- Kayıt Formu -->
+<div id="register-screen" class="box hidden">
+  <h2>Kayıt Ol</h2>
+
+  <form id="register-form">
+    <input type="text" id="username" placeholder="Kullanıcı Adı" required>
+    <input type="password" id="password" placeholder="Şifre" required>
+    
+    <button type="submit">Kayıt Ol</button>
+  </form>
+
+  <p class="forgot-password">
+    Şifrenizi mi unuttunuz? <a href="#" id="support-link">Destek Alın</a>
+  </p>
+</div>
+
+<!-- Destek Modal -->
+<div id="support-modal" class="modal hidden">
+  <div class="modal-content">
+    <span id="close-modal" class="close">&times;</span>
+    <h3>Destek için iletişim</h3>
+    <p>Şifre sıfırlama için lütfen aşağıdaki Gmail adresine mail atın:</p>
+    <a href="mailto:support.bettingdemo@gmail.com">support.bettingdemo@gmail.com</a>
+  </div>
+</div>
+
 
   <script src="script.js"></script>
 </body>
