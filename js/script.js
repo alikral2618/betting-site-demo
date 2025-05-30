@@ -1,4 +1,3 @@
-// Önceki goToRegister fonksiyonunu koruyoruz
 function goToRegister() {
   const amount = document.getElementById("amount").value;
   if (amount && amount > 0) {
@@ -9,7 +8,6 @@ function goToRegister() {
   }
 }
 
-// Destek modal kontrolü
 const supportLink = document.getElementById("support-link");
 const supportModal = document.getElementById("support-modal");
 const closeModal = document.getElementById("close-modal");
@@ -29,7 +27,6 @@ window.addEventListener("click", function(event) {
   }
 });
 
-// Kayıt formu submit (şimdilik demo amaçlı sadece alert)
 const registerForm = document.getElementById("register-form");
 registerForm.addEventListener("submit", function(e) {
   e.preventDefault();
@@ -39,18 +36,7 @@ registerForm.addEventListener("submit", function(e) {
 
   if(username && password) {
     alert(`Kayıt başarılı!\nKullanıcı Adı: ${username}`);
-    // Burada gerçek kayıt işlemi yapılabilir
   } else {
     alert("Lütfen tüm alanları doldurun.");
   }
 });
-
-function goToRegister() {
-  const amount = document.getElementById("amount").value;
-  if (amount && amount > 0) {
-    document.getElementById("deposit-screen").classList.add("hidden");
-    document.getElementById("register-screen").classList.remove("hidden");
-  } else {
-    alert("Lütfen geçerli bir tutar girin.");
-  }
-}
