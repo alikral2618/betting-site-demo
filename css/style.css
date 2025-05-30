@@ -1,20 +1,8 @@
-/* Genel body ve tam ekran merkezi hizalama */
-body, html {
+body {
   margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Ana container */
-.main-container {
-  width: 100%;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   height: 100vh;
-  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,13 +10,11 @@ body, html {
 
 /* Para Yükleme Bölümü */
 .deposit-section {
-  background-color: white;
+  text-align: center;
+  background: white;
   padding: 2rem 3rem;
   border-radius: 12px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  width: 360px;
-  max-width: 90%;
-  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .deposit-section h2 {
@@ -37,14 +23,14 @@ body, html {
 }
 
 .deposit-section button {
-  padding: 0.75rem 1.5rem;
+  padding: 0.85rem 2rem;
   font-size: 1.1rem;
   background-color: #764ba2;
-  color: white;
   border: none;
   border-radius: 8px;
+  color: white;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .deposit-section button:hover {
@@ -53,27 +39,29 @@ body, html {
 
 /* Kayıt Formu Bölümü */
 .register-section {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: none; /* Ana body's gradient zaten var */
+  z-index: 1000;
 }
 
-/* Form kutusu */
 .form-box {
   background: white;
-  border: 1px solid black; /* İnce siyah çizgi */
+  border: 1px solid black;
   border-radius: 8px;
   padding: 2rem 3rem;
   width: 320px;
-  height: 320px; /* Kare şeklinde */
+  height: 320px;
   box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .form-box h2 {
@@ -114,7 +102,6 @@ body, html {
   background-color: #5a3580;
 }
 
-/* Destek linki - kutunun sağ alt köşesinde */
 .support-link {
   position: absolute;
   right: 1rem;
@@ -129,7 +116,6 @@ body, html {
   color: #5a3580;
 }
 
-/* Gizli */
 .hidden {
   display: none !important;
 }
