@@ -1,8 +1,14 @@
-body {
+/* Global Reset */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,19 +55,18 @@ body {
 }
 
 .form-box {
-  background: white;
-  border: 1px solid black;
+  background: #fff;
+  border: 1px solid #000;
   border-radius: 8px;
   padding: 2rem 3rem;
   width: 320px;
   height: 320px;
-  box-sizing: border-box;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .form-box h2 {
