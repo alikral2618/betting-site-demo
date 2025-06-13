@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Demo Casino - Ana Sayfa</title>
+  <title>Demo Casino - Giriş</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Demo Casino'ya Hoşgeldiniz</h1>
-    <p>Demo bakiye ile oyun oyna, gerçek para yoktur!</p>
-    <div class="buttons">
-      <a href="login.html" class="btn">Giriş / Kayıt Ol</a>
-    </div>
+    <h2>Demo Casino Giriş / Kayıt</h2>
+    <form id="loginForm">
+      <label for="username">Kullanıcı Adı:</label>
+      <input type="text" id="username" required />
+      <label for="password">Şifre:</label>
+      <input type="password" id="password" required />
+      <button type="submit" class="btn">Giriş Yap / Kayıt Ol</button>
+    </form>
+    <p id="message"></p>
   </div>
+  <script src="js/login.js"></script>
 </body>
 </html>
