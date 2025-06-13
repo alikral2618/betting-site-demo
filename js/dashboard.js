@@ -1,30 +1,20 @@
 window.addEventListener('DOMContentLoaded', () => {
   const username = localStorage.getItem('loggedInUser');
   if (!username) {
-    window.location.href = 'index.html';
+    window.location.href = 'index.html'; // Giriş yapılmamışsa login sayfasına gönder
     return;
   }
 
   let users = JSON.parse(localStorage.getItem('demoUsers') || '{}');
   let user = users[username];
 
-  const userDisplay = document.getElementById('userDisplay');
-  const balanceDisplay = document.getElementById('balanceDisplay');
-  const loadDemoMoneyBtn = document.getElementById('loadDemoMoney');
-  const logoutBtn = document.getElementById('logoutBtn');
+  // Kullanıcı adı ve bakiye göster
+  document.getElementById('usernameDisplay').textContent = username;
+  document.getElementById('balanceDisplay').textContent = user.balance.toFixed(2);
 
-  userDisplay.textContent = username;
-  balanceDisplay.textContent = user.balance.toFixed(2);
-
-  loadDemoMoneyBtn.onclick = () => {
-    user.balance += 1000;
-    balanceDisplay.textContent = user.balance.toFixed(2);
-    users[username] = user;
-    localStorage.setItem('demoUsers', JSON.stringify(users));
-  };
-
-  logoutBtn.onclick = () => {
-    localStorage.removeItem('loggedInUser');
-    window.location.href = 'index.html';
+  // Logout butonuna tıklandığında:
+  document.getElementById('logoutBtn').onclick = () => {
+    localStorage.removeItem('loggedInUser');  // Oturum bilgisini temizle
+    window.location.href = 'index.html';       // Login sayfasına yönlendir
   };
 });
