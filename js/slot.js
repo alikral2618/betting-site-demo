@@ -69,10 +69,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const maxCount = Math.max(...Object.values(counts));
 
     if (maxCount === 5) {
+      if (spinResult[0] === '🍉') return 5000;
       if (spinResult[0] === '7️⃣') return 5000;
       if (spinResult[0] === '⭐') return 3000;
       return 2000;
     }
+    if (maxCount === 5) return 700;
     if (maxCount === 4) return 500;
     if (maxCount === 3) return 200;
     if (maxCount === 2) return 50;
