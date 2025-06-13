@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo Casino - Rulet Oyunu</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Rulet Oyunu</h2>
+    <p>Bakiye: <span id="balanceDisplay"></span> ₺</p>
+    <label for="betNumber">1-36 arasında bir sayı seçin:</label><br />
+    <input type="number" id="betNumber" min="1" max="36" required /><br />
+    <label for="betAmount">Bahis Miktarı (₺):</label><br />
+    <input type="number" id="betAmount" min="1" required /><br />
+    <button id="spinBtn" class="btn">Çevir!</button>
+    <p id="resultMessage"></p>
+    <button class="btn" onclick="location.href='dashboard.html'">Geri Dön</button>
+  </div>
+  <script src="js/roulette.js"></script>
+</body>
+</html>
