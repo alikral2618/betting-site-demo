@@ -8,15 +8,14 @@
 </head>
 <body>
   <div class="container">
-    <h2>Hoşgeldin, <span id="userDisplay"></span></h2>
+    <h2>Hoşgeldiniz, <span id="userDisplay"></span></h2>
     <p>Bakiye: <span id="balanceDisplay"></span> ₺</p>
-    <button id="addFundsBtn" class="btn">Demo Para Yükle (+1000 ₺)</button>
-    <div class="games">
-      <a href="slot.html" class="btn game-btn">Slot Oyunu</a>
-      <a href="roulette.html" class="btn game-btn">Rulet Oyunu</a>
-    </div>
-    <button id="logoutBtn" class="btn logout-btn">Çıkış Yap</button>
+    <button id="loadDemoMoney" class="btn">Demo Para Yükle (+1000₺)</button>
+    <button id="logoutBtn" class="btn">Çıkış Yap</button>
+    <hr />
+    <h3>Oyunlar</h3>
+    <button onclick="location.href='slot.html'" class="btn">Slot Oyunu</button>
   </div>
-  <script src="js/balance.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
