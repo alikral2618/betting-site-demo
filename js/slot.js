@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const symbols = ['🍒', '🍋', '🍊', '🍉', '⭐', '7️⃣', '🍇', '🍓', '🍍', '🥝'];
 
   const animationDuration = 2000;
-  const animationDelays = [0, 300, 600, 900, 1200];
+  const animationDelays = [0, 300, 600, 900, 1200]; // 5 slot için
 
   function getRandomSymbol() {
     return symbols[Math.floor(Math.random() * symbols.length)];
