@@ -1,25 +1,25 @@
-# Betting Site Demo
+# Demo Casino - Kumar Sitesi Demo Projesi
 
-Bu proje, basit bir **betting sitesi demo** uygulamasıdır.  
-Kullanıcıların para yükleyebileceği ve kayıt olabileceği modern, sade bir arayüz sunar.
+Bu proje, **gerçek para yatırımı olmayan**, tamamen **demo amaçlı** bir kumar sitesi örneğidir.  
+HTML, CSS ve JavaScript kullanılarak geliştirilmiş olup, kullanıcıların localStorage'da kayıtlı demo bakiye ile oyun oynayabileceği basit bir yapı sunar.
 
 ---
 
 ## Özellikler
 
-- Ana sayfa açıldığında kullanıcıya **Para Yükleme** seçeneği sunulur.
-- "Para Yüklemeye Başla" butonuna basıldığında **Kayıt Ol** formu görünür.
-- Kayıt formunda sadece **Kullanıcı Adı** ve **Şifre** alanları vardır.
-- Şifre unutma durumunda, kullanıcılar destek için **gmail** adresi üzerinden iletişim kurabilir.
-- Modern ve responsive tasarım.
-- Basit modal destek sistemi.
+- Kullanıcı kaydı ve girişi (şifreli değil, demo amaçlı)
+- Demo bakiye yönetimi (başlangıçta 10.000₺ bakiye)
+- Demo para yükleme butonu (+1000₺)
+- Slot oyunu (3 sembollü, farklı kazanç oranları)
+- Rulet oyunu (1-36 arası sayı seçip bahis yapma)
+- Kullanıcı bakiyesi ve bahisler localStorage üzerinde saklanır
+- Tamamen frontend tabanlı, backend veya gerçek para işlemi yoktur
+- GitHub Pages ile kolay yayınlanabilir
 
 ---
 
-## Kullanım
+## Kurulum ve Çalıştırma
 
-1. Repoyu klonlayın:
-
+1. Projeyi klonlayın veya ZIP olarak indirin:
    ```bash
-   git clone https://github.com/alikral2618/betting-site-demo.git
-   cd betting-site-demo
+   git clone https://github.com/kullaniciadi/demo-casino.git
