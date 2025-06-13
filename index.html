@@ -3,21 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Demo Casino - Giriş</title>
+  <title>Demo Casino - Slot Oyunu</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .slot-reels {
+      display: flex;
+      justify-content: center;
+      font-size: 60px;
+      margin: 20px 0;
+      height: 100px;
+      overflow: hidden;
+      border: 3px solid #e91e63;
+      border-radius: 15px;
+      background: #111;
+      box-shadow: 0 0 15px #e91e63;
+      user-select: none;
+    }
+    .reel {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      margin: 0 10px;
+      animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+      animation-fill-mode: forwards;
+    }
+    @keyframes spinAnimation {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-150%);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h2>Demo Casino Giriş / Kayıt</h2>
-    <form id="loginForm">
-      <label for="username">Kullanıcı Adı:</label>
-      <input type="text" id="username" required />
-      <label for="password">Şifre:</label>
-      <input type="password" id="password" required />
-      <button type="submit" class="btn">Giriş Yap / Kayıt Ol</button>
-    </form>
-    <p id="message"></p>
+    <h2>Slot Oyunu (Animasyonlu)</h2>
+    <p>Bakiye: <span id="balanceDisplay"></span> ₺</p>
+    <div id="slotReels" class="slot-reels">
+      <div class="reel">🍒</div>
+      <div class="reel">🍋</div>
+      <div class="reel">🍊</div>
+      <div class="reel">🍉</div>
+      <div class="reel">⭐</div>
+    </div>
+    <button id="spinBtn" class="btn">Çevir! (100₺ bahis)</button>
+    <p id="resultMessage"></p>
+    <button class="btn" onclick="location.href='dashboard.html'">Geri Dön</button>
   </div>
-  <script src="js/login.js"></script>
+  <script src="js/slot.js"></script>
 </body>
 </html>
