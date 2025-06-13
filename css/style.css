@@ -1,3 +1,74 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  margin: 0; padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 320px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+.btn {
+  background: #e91e63;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #ad1457;
+}
+
+.game-btn {
+  width: 140px;
+  margin: 10px 5px;
+}
+
+.logout-btn {
+  background: #9e9e9e;
+}
+
+p {
+  margin-top: 10px;
+}
+
+.slot-reels {
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  margin: 20px 0;
+}
+
+.reel {
+  margin: 0 10px;
+}
+
+/* Slot animasyon */
 @keyframes spinAnimation {
   0% {
     transform: translateY(0);
